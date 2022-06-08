@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Table from './components/Table'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const headers = {
+    name: 'Name',
+    origin: 'Origin',
+    largestCountry: 'Largest Exporter',
+    productionInBillions: 'Pruduction (BLN)',
+  }
+
+  const rows = [
+    {
+      name: 'Apple',
+      origin: 'Spain',
+      largestCountry: 'India',
+      productionInBillions: '1.5',
+    },
+    {
+      name: 'Mango',
+      origin: 'India',
+      largestCountry: 'India',
+      productionInBillions: '1.9',
+    },
+    {
+      name: 'Avocados',
+      origin: 'America',
+      largestCountry: 'America',
+      productionInBillions: '1.9',
+    },
+    {
+      name: 'PassionFruit',
+      origin: 'America',
+      largestCountry: 'America',
+      productionInBillions: '1.7',
+    },
+  ]
+
+  const sorters = {
+    name: true,
+    origin: true,
+    productionInBillions: true,
+  }
+  return <Table headers={headers} rows={rows} sorters={sorters} />
 }
 
-export default App;
+export default App
